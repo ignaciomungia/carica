@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="puntualo">Моля, ако ви харесва това приложение можете да го дам 5 звезди (благодарение приятел).</string>
+	<string name="titvertical">Вземете картината вертикално (Portrait)</string>
+	<string name="menvertical">Не се обръщай дръжте устройството изправено.</string>
+	<string name="saving">Updated Пила под:</string>
+	<string name="selectimg">Кликнете върху основната изображението, което искате да продължите редактирането.</string>
+</resources>

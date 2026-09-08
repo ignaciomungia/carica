@@ -1,0 +1,54 @@
+ <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical" 
+                android:id="@+id/principal">              
+          
+        
+ <LinearLayout 
+        android:id="@+id/layoutcambios4"
+        android:layout_width="wrap_content"
+    	android:layout_height="wrap_content" 
+    	android:orientation="horizontal"
+    	android:background="@color/Black">
+
+    <TextView 
+     				android:textSize="18sp"
+     				android:layout_width="75dp"
+     				android:layout_height="wrap_content"
+     				android:text="@string/brillo"
+     				android:textColor="@color/LemonChiffon"/>		
+				<ImageButton
+                    android:src="@drawable/mas2"
+                    android:scaleType="fitCenter" 
+                        android:onClick="aumentarBrillo"   
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+					android:background="@color/Black"/>
+                  <ImageButton
+                    	android:src="@drawable/minus2"
+
+                    	android:scaleType="fitCenter" 
+                        android:onClick="disminuirBrillo"   
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                  		android:background="@color/Black"/>
+</LinearLayout>
+<LinearLayout 
+        android:id="@+id/layoutcambios6"
+        android:layout_width="wrap_content"
+    	android:layout_height="wrap_content" 
+    	android:orientation="horizontal"
+    	android:background="@color/Black"> 
+			<ImageButton
+                    android:src="@drawable/cerrar"
+                    android:scaleType="centerInside" 
+                    android:onClick="cerrarPopup"   
+                    android:layout_width="195dp"
+                    android:layout_height="60dp"
+                    android:background="@null"/>
+			
+    	    
+ </LinearLayout>
+  </LinearLayout>
+        

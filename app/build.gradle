@@ -1,0 +1,48 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdk 34
+    namespace "caricam.caricature.photo"
+    //buildTools '36.0.0'
+    defaultConfig {
+        applicationId "caricam.caricature.photo"
+        minSdkVersion 23
+        targetSdk 35
+        versionCode 35
+        versionName '35.0'
+        multiDexEnabled true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            multiDexEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    productFlavors {
+    }
+    lintOptions {
+        disable 'MissingTranslation'
+    }
+}
+
+dependencies {
+
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    //implementation 'com.google.firebase:firebase-core:16.0.4'
+    //implementation 'com.android.support:appcompat-v7:27.0.0'
+     // Usa la última versión estable
+    implementation 'com.google.android.gms:play-services-ads:23.0.0'
+    implementation 'com.github.yalantis:ucrop:2.2.8'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5' // O la última versión
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1' // O la última versión
+    androidTestImplementation 'androidx.test:runner:1.5.2' // O la última versión
+    androidTestImplementation 'androidx.test:rules:1.5.0' // O la última versión
+    implementation 'androidx.multidex:multidex:2.0.1'
+}
+apply plugin: 'com.google.gms.google-services'

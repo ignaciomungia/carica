@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="puntualo">あなたは、このアプリが好きなら、あなたはそれを5つ星（感謝の友人）を与えることができますしてください。</string>
+	<string name="titvertical">画像垂直方向（ポートレート）を取得します。</string>
+	<string name="menvertical">直立デバイスを保持しないでください。</string>
+	<string name="saving">の下でファイル更新日：</string>
+	<string name="selectimg">編集を続行するベース画像をクリックしてください。</string>
+</resources>
