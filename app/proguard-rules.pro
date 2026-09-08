@@ -6,7 +6,7 @@
 #
 # For more details, see
 #   http://developer.android.com/guide/developing/tools/proguard.html
-
+-dontoptimize
 # Add any project specific keep options here:
 # Reglas para resolver el error de LoudnessCodecController con AdMob
 # Estas clases son parte del SDK de Android, pero si R8 las pierde,
