@@ -15,8 +15,8 @@ android {
         applicationId "caricam.caricature.photo"
         minSdkVersion 23
         targetSdk 36
-        versionCode 36        // comprueba antes en Play Console cuál es el real publicado
-        versionName '36.0'
+        versionCode 361       // comprueba antes en Play Console cuál es el real publicado
+        versionName '36.1'
         multiDexEnabled true
     }
     compileOptions {
