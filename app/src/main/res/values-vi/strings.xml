@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-	<string name="puntualo">Xin vui lòng, nếu bạn thích ứng dụng này, bạn có thể cho nó 5 sao (người bạn nhờ).</string>
-	<string name="titvertical">Lấy hình ảnh theo chiều dọc (Portrait).</string>
-	<string name="menvertical">Đừng biến giữ điện thoại thẳng đứng.</string>
-	<string name="saving">Cập nhật Nộp theo:</string>
-	<string name="selectimg">Bấm vào hình ảnh cơ sở bạn muốn tiếp tục chỉnh sửa.</string>
-</resources>

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-	<string name="puntualo">Пожалуйста, если вам нравится это приложение вы можете дать ему 5 звезд (спасибо друг).</string>
-	<string name="titvertical">Получить изображение по вертикали (портрет).</string>
-	<string name="menvertical">Не включайте держите устройство в вертикальном положении.</string>
-	<string name="saving">Обновлено Рубрики:</string>
-	<string name="selectimg">Нажмите на основное изображение вы хотите, чтобы продолжить редактирование.</string>
-</resources>

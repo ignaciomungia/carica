@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-	<string name="puntualo">Per favore, se vi piace questa applicazione è possibile dare 5 stelle (grazie amico).</string>
-	<string name="titvertical">Ottenere l\'immagine in verticale (ritratto).</string>
-	<string name="menvertical">Non accendere tenere il dispositivo in posizione verticale.</string>
-	<string name="saving">Aggiornato Archiviato in:</string>
-	<string name="selectimg">Clicca l\'immagine di base che si desidera continuare a modificare su.</string>
-</resources>

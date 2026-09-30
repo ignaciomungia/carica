@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-	<string name="puntualo">Pกรุณาถ้าคุณต้องการ app นี้คุณสามารถให้มัน 5 ดาว (ขอบคุณเพื่อน)</string>
-	<string name="titvertical">จะได้รับภาพในแนวตั้ง (บุคคล)</string>
-	<string name="menvertical">อย่าเปิดถืออุปกรณ์ตรง</string>
-	<string name="saving">การปรับปรุงยื่นใต้:</string>
-	<string name="selectimg">คลิกที่ภาพฐานที่คุณต้องการที่จะดำเนินการแก้ไข</string>
-</resources>
