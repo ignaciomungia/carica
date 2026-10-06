@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="puntualo">لطفا، اگر دوست دارید این برنامه شما می توانید آن را 5 ستاره (با تشکر از دوستان) به من بدهید.</string>
+	<string name="titvertical">دریافت تصویر به صورت عمودی (پرتره).</string>
+	<string name="menvertical">آیا روشن نیست که دستگاه درست نگه دارید.</string>
+	<string name="saving">به روز شده در زمینه:</string>
+	<string name="selectimg">بر روی تصویر پایه می خواهید ادامه ویرایش کلیک کنید.</string>
+</resources>

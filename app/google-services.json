@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "193753032155",
+    "firebase_url": "https://carica-959ce.firebaseio.com",
+    "project_id": "carica-959ce",
+    "storage_bucket": "carica-959ce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:193753032155:android:64c3ef78560a6b5a",
+        "android_client_info": {
+          "package_name": "caricam.caricature.photo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "193753032155-8vs3k06a43vqq3rbgbpj6mk749gnu6jj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDd2PJNJDM-DBoztQTbrOiLqFLtzwSjbT4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

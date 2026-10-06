@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="puntualo">请，如果你喜欢这个程序，你可以给它5星（感谢朋友）</string>
+	<string name="titvertical">得到的图片垂直（纵向）</string>
+	<string name="menvertical">不要把保持直立的设备。</string>
+	<string name="saving">下一篇更新。</string>
+	<string name="selectimg">单击要继续编辑基本图像上。</string>
+</resources>

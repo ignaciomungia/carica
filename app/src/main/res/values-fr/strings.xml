@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+   
+	<string name="puntualo">S\'il vous plaît, si vous aimez ce soft, vous pouvez lui donner 5 étoiles (merci d\'ami)</string>
+  	<string name="titvertical">Obtenez l\'image verticalement (Portrait)</string>
+	<string name="menvertical">Ne mettez pas tenir l\'appareil en position verticale.</string>
+	<string name="saving">Mise à jour, nom de fichier:</string>
+	
+	<string name="selectimg">Cliquez sur l\'image de base que vous voulez poursuivre l\'édition.</string>
+</resources>
