@@ -313,7 +313,15 @@ public class Pantalla2 extends Activity{
 	 float xxx=0;
 	 float yyy=0;
 	 private InterstitialAd interstitial;
-	
+
+	 // Las políticas de AdMob exigen no mostrar un intersticial más de una vez
+	 // cada dos acciones del usuario, y dicen explícitamente que ese límite
+	 // también se aplica al botón de atrás. Como "volver" (botón) y el botón
+	 // de atrás físico llevan ambos a salirDePantalla2(), usamos este contador
+	 // estático (vive mientras dure el proceso de la app) para no mostrar el
+	 // anuncio en dos salidas consecutivas: sí, no, sí, no...
+	 private static int salidasDesdeUltimoAnuncio = 0;
+
 /*
  * A�adir plantillas en onCreate
  */
@@ -945,21 +953,38 @@ public void rotar(View v) {
 public void compartirConTextoFace(View v) {		
 }
 	
-public void volver(View v) {		
-		
-	finish();
-	displayInterstitial();
+public void volver(View v) {
+	salirDePantalla2();
 }
-	
+
 	public boolean onKeyDown(int keyCode, KeyEvent event)
 {
     if ((keyCode == KeyEvent.KEYCODE_BACK))
     {
-			finish();
-		 	displayInterstitial();
+			salirDePantalla2();
+			return true;
     }
     return super.onKeyDown(keyCode, event);
 }
+
+	/**
+	 * Punto único de salida de esta pantalla, desde el botón "volver" y desde
+	 * el botón de atrás físico. Antes se hacía finish() y LUEGO se intentaba
+	 * mostrar el intersticial: para ese momento la Activity ya estaba
+	 * cerrándose, así que el anuncio podía no mostrarse bien o directamente no
+	 * mostrarse. Ahora se muestra primero (si toca, ver el contador de arriba)
+	 * y solo se cierra la pantalla cuando el usuario lo cierra -- igual que en
+	 * piramidhologram.
+	 */
+	private void salirDePantalla2() {
+		salidasDesdeUltimoAnuncio++;
+		if (salidasDesdeUltimoAnuncio >= 2) {
+			salidasDesdeUltimoAnuncio = 0;
+			displayInterstitial(this::finish);
+		} else {
+			finish();
+		}
+	}
 public void cerrarPopup(View v) {		
 		
 	popupWindow.dismiss();
@@ -1978,18 +2003,36 @@ public class ImageFilterAdapter2 extends BaseAdapter {
 	 }
 	 // Invoca displayInterstitial() cuando est preparado para mostrar un intersticial.
 	 public void displayInterstitial() {
+		 displayInterstitial(null);
+	 }
+
+	 /**
+	  * Igual que antes, pero con un Runnable que se ejecuta cuando el usuario
+	  * cierra el anuncio (o si el anuncio falla al mostrarse) -- así quien
+	  * llama puede esperar a que el intersticial termine antes de cerrar la
+	  * pantalla, en vez de cerrarla y mostrar el anuncio a la vez. Si no hay
+	  * intersticial listo, se ejecuta el Runnable inmediatamente.
+	  */
+	 public void displayInterstitial(Runnable alTerminar) {
 		 if (interstitial != null) {
 			 interstitial.setFullScreenContentCallback(new FullScreenContentCallback(){
 				 @Override
 				 public void onAdDismissedFullScreenContent() {
 					 // Called when fullscreen content is dismissed.
 					 //Log.d("TAG", "The ad was dismissed.");
+					 if (alTerminar != null) {
+						 alTerminar.run();
+					 }
 				 }
 
 				 @Override
 				 public void onAdFailedToShowFullScreenContent(AdError adError) {
 					 // Called when fullscreen content failed to show.
 					 //Log.d("TAG", "The ad failed to show.");
+					 interstitial = null;
+					 if (alTerminar != null) {
+						 alTerminar.run();
+					 }
 				 }
 
 				 @Override
@@ -2002,6 +2045,8 @@ public class ImageFilterAdapter2 extends BaseAdapter {
 				 }
 			 });
 			 interstitial.show(this);
+		 } else if (alTerminar != null) {
+			 alTerminar.run();
 		 }
 	 }
 }

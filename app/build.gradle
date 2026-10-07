@@ -37,7 +37,17 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            // Antes estaba en false porque R8 rompía algo al ofuscar/reducir
+            // (ver el comentario de LoudnessCodecController en proguard-rules.pro,
+            // ya cubierto con un -keep). Google Play exige un mínimo de
+            // ofuscación/reducción para no penalizar la visibilidad de la app,
+            // así que lo activamos, apoyado en esa regla ya existente.
+            minifyEnabled true
+            // Quita de la app final los recursos (imágenes, layouts...) que el
+            // propio code shrinker detecta que no se usan. No tiene relación
+            // con la ofuscación del código, pero solo funciona con minifyEnabled
+            // true, así que lo activamos a la vez ya que no cuesta nada extra.
+            shrinkResources true
             multiDexEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             if (hasSigningConfig) {
