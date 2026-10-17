@@ -23,6 +23,21 @@
 # indicamos que las mantenga.
 -keep class android.media.LoudnessCodecController$OnLoudnessCodecUpdateListener { *; }
 -keep class android.media.LoudnessCodecController { *; }
+
+# Fix del crash "Failed to create an instance of androidx.work.impl.WorkDatabase"
+# (FATAL EXCEPTION al arrancar la app, visto en el log de carica2).
+# WorkManager (una librería que arrastra el propio SDK de AdMob, no la usamos
+# directamente) guarda sus tareas en una base de datos Room interna llamada
+# WorkDatabase. Room crea esa base de datos en tiempo de ejecución buscando por
+# reflexión una clase generada en compilación llamada "WorkDatabase_Impl". Con
+# minifyEnabled a true, R8 puede eliminar o renombrar esa clase generada al no
+# detectar que se usa (porque solo se referencia por reflexión), y entonces
+# falla justo al arrancar la aplicación. Con este -keep evitamos que R8 toque
+# esa clase y cualquier otra base de datos Room que pueda arrastrar alguna
+# librería.
+-keep class * extends androidx.room.RoomDatabase
+-keep class androidx.work.impl.WorkDatabase
+-keep class androidx.work.impl.WorkDatabase_Impl { *; }
 # If your project uses WebView with JS, uncomment the following
 # and specify the fully qualified class name to the JavaScript interface
 # class:
